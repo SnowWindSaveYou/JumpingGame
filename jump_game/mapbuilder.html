@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>KeepTypingBuilder</title>
+
+        <style type="text/css">
+        * { margin:0; padding:0; }
+        canvas { position: absolute;left: 200px; display:block; border:1px solid #bbb; outline:none; }
+        .box { position:relative; }
+        </style>
+        <script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    </head>
+    
+    <body>
+        
+        <div class="box">
+            <canvas id="canvas" tabindex="0" width="600" height="600" style="cursor: auto;z-index: 9;"></canvas>
+            <canvas id="canvas2" tabindex="0" width="600" height="600" style="cursor: auto;"></canvas>
+            <canvas id="canvas3" tabindex="0" width="600" height="600" style="cursor: auto;"></canvas>
+        </div>
+        <div id = "toolbar" style="position: absolute; left: 0; top: 0;">
+            <li>Name <input type="text" id="mapname" /></li>
+            <li><input type="radio" name="tool" value="select" /> Selecting</li>
+            <li><input type="radio" name="tool" value="box" /> Basic Box </li>
+            <li><input type="radio" name="tool" value="ice" /> Ice </li>
+            <li><input type="radio" name="tool" value="swamp" /> Swamp </li>
+            <li><input type="radio" name="tool" value="moveBox" /> Move Box </li>
+            <li><input type="radio" name="tool" value="hideBox" /> Hide Box </li>
+            <li><input type="radio" name="tool" value="spring" /> Spring </li>
+            <li><input type="radio" name="tool" value="conveyorBelt" /> ConveyorBelt</li>
+            <li><input type="radio" name="tool" value="enemy" /> Enemy </li>
+            <!-- <li><input type="radio" name="tool" value="circleEnemy" /> Circle Enemy </li> -->
+            <li><input type="radio" name="tool" value="door" /> Out Door </li>
+            <li><input type="radio" name="tool" value="player" /> Player Start Point </li>
+            <!-- <li><input type="radio" name="tool" value="transfer" /> Tranfer Door</li> -->
+            <li><input type="button" id="laststage" value="LAST" onclick="lastStage()"/>
+                <input type="button" id="nextstage" value="NEXT" onclick="nextStage()"/></li>
+            <li><input type="button" id="clear" value="CLEAR" onclick="clearDraw()"/></li>
+            <li><input type="button" id="refresh" value="REFRESH" onclick="refreshDraw()"/></li>
+            <li><input type="button" id="save" value="SAVE" onclick="saveMap()"/></li>
+        </div>
+        <div id="menubar" style="position: absolute; right: 0; top: 0;">
+            <ul>
+                <li>Type <select id = "elem_type">
+                            <option value ="volvo">Volvo</option>
+                            <option value ="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select></li>
+                <li>X <input type="text" id = "elem_x"></li>
+                <li>Y <input type="text" id = "elem_y"></li>
+                <li>W <input type="text" id = "elem_w"></li>
+                <li>H <input type="text" id = "elem_h"></li>
+            </ul>
+            <ul id = "elem_pro">
+            </ul>
+            <ul>
+                <li><input type="button" id="change" value="CHANGE" onclick="changeElem()"/></li>
+                <li><input type="button" id="delete" value="DELETE" onclick="deleteElem()"/></li>
+            </ul>
+            
+
+        </div>
+
+        <!-- main js for game -->
+        <script type="text/javascript" src="./js/mapbuilder.js"></script>
+
+        <div style="text-align:center;">
+        </div>
+    </body>
+</html>

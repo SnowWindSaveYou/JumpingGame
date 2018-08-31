@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<map>
+    <stage level = '1'>
+        <player>20,400</player>
+        <door>560,280,20,20</door>
+        <box>0,500,200,100</box>
+        <box>200,400,200,200</box>
+        <box>400,300,200,300</box>
+    </stage>
+    <stage level = "2">
+        <player>20,30</player>
+        <door>10,20,20,20</door>
+        <box>10,20,30,40</box>
+    </stage>
+</map>
